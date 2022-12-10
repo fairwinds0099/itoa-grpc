@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package itoa.mgmt;
+
+option go_package = "github.com/fairwinds0099/itoa-grpc";
+
+message AnalyticsInputs {
+  string pdf = 1;
+  string scale = 2;
+}
+
+message Result {
+  int32 cdf =1;
+  int32 id =2 ;
+}
+
+service ItoaMgmt {
+  rpc CreateNewAnalytics (AnalyticsInputs) returns (Result) {}
+}
